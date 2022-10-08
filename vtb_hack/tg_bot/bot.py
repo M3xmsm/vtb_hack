@@ -83,5 +83,5 @@ def ceo_uk_news(m, res=False):
 
 
 if __name__ == "__main__":
-
+    print("Running...")
     bot.polling(none_stop=True, interval=0)
