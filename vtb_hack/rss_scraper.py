@@ -1,6 +1,5 @@
 import feedparser
-from typing import Dict, List, Any
-import pandas as pd
+from typing import Dict, List, Tuple
 from structlog import get_logger
 
 logger = get_logger()
@@ -38,32 +37,13 @@ my_feed = {
 }
 
 
-def check_url(url_feed: str):
-    return feedparser.parse(url_feed)
-
-
-def get_headlines(url_feed: str) -> List[str]:
-    lenta = check_url(url_feed)
-    headlines = [item_of_news['title'] for item_of_news in lenta['items']]
-    return headlines
-
-
-def get_descriptions(url_feed: str) -> List[str]:
-    lenta = check_url(url_feed)
-    descriptions = [item_of_news['description'] for item_of_news in lenta['items']]
-    return descriptions
-
-
-def get_links(url_feed: str) -> List[str]:
-    lenta = check_url(url_feed)
-    links = [item_of_news['link'] for item_of_news in lenta['items']]
-    return links
-
-
-def get_dates(url_feed: str) -> List[str]:
-    lenta = check_url(url_feed)
-    dates = [item_of_news['published'] for item_of_news in lenta['items']]
-    return dates
+def get_news(url_feed: str) -> Tuple[List[str], ...]:
+    feed = feedparser.parse(url_feed)
+    headlines = [item_of_news['title'] for item_of_news in feed['items']]
+    descriptions = [item_of_news['description'] for item_of_news in feed['items']]
+    links = [item_of_news['link'] for item_of_news in feed['items']]
+    dates = [item_of_news['published'] for item_of_news in feed['items']]
+    return headlines, descriptions, links, dates
 
 
 def get_rss_news(feed: Dict[str, str]) -> List[Dict[str, str]]:
@@ -71,12 +51,9 @@ def get_rss_news(feed: Dict[str, str]) -> List[Dict[str, str]]:
     for key, url in feed.items():
         source, label = key.split('::')
         logger.info("Starting to parce", source=source)
-        all_headlines = get_headlines(url)
-        all_descriptions = get_descriptions(url)
-        all_links = get_links(url)
-        all_dates = get_dates(url)
+        headlines, descriptions, links, dates = get_news(url)
 
-        for head, desc, link, dt in zip(all_headlines, all_descriptions, all_links, all_dates):
+        for head, desc, link, dt in zip(headlines, descriptions, links, dates):
             record = {
                 'source': source,
                 'label': label,
