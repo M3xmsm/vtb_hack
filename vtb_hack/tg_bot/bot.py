@@ -49,7 +49,7 @@ def buh_reg_news(m, res=False):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton("👈 Вернуться в меню")
     markup.add(item1)
-    news_records = get_news_records_by_label('Бухгалтерия', 3)
+    news_records = get_news_records_by_label('Бухгалтерия')
     for news in news_records:
         msg = news['headline'] + '\n\n*Подробнее*: ' + news['link']
         bot.send_message(m.chat.id, msg, reply_markup=markup, parse_mode='Markdown')
@@ -68,7 +68,7 @@ def ceo_econ_news(m, res=False):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton("👈 Вернуться в меню")
     markup.add(item1)
-    news_records = get_news_records_by_label('Экономика', 3)
+    news_records = get_news_records_by_label('Экономика')
     for news in news_records:
         msg = news['headline'] + '\n\n*Подробнее*: ' + news['link']
         bot.send_message(m.chat.id, msg, reply_markup=markup, parse_mode='Markdown')
