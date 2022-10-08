@@ -15,5 +15,5 @@ def get_news_records_by_label(label: str, limit: int = 10, sample_size: int = 3)
         LIMIT {limit}
     """
     records = ch_client.select_as_records(q)
-    sampled = random.choices(records, k=sample_size)
+    sampled = random.sample(records, k=sample_size)
     return sampled
