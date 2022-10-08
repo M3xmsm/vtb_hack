@@ -74,7 +74,7 @@ def ceo_econ_news(m, res=False):
         bot.send_message(m.chat.id, msg, reply_markup=markup, parse_mode='Markdown')
 
 
-@bot.message_handler(regexp="Изменения в УК🫣")
+@bot.message_handler(regexp="Изменения в законодательства🫣")
 def ceo_uk_news(m, res=False):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton("👈 Вернуться в меню")
