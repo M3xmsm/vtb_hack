@@ -58,7 +58,7 @@ def buh_reg_news(m, res=False):
 @bot.message_handler(regexp="CEO: новости экономики в стране и мире")
 def ceo_news(m, res=False):
     markup = telebot.types.ReplyKeyboardMarkup(True, True)
-    markup.row('Экономика и финансы💸', 'Изменения в законодательстве🫣')
+    markup.row('Экономика и финансы💸', 'Законодательство🫣')
     markup.row('👈 Вернуться в меню')
     bot.send_message(m.chat.id, 'Могу рассказать про последние новости экономики или об изменениях в УК',  reply_markup=markup)
 
@@ -74,7 +74,7 @@ def ceo_econ_news(m, res=False):
         bot.send_message(m.chat.id, msg, reply_markup=markup, parse_mode='Markdown')
 
 
-@bot.message_handler(regexp="Изменения в законодательстве🫣")
+@bot.message_handler(regexp="Законодательство🫣")
 def ceo_uk_news(m, res=False):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton("👈 Вернуться в меню")
