@@ -58,8 +58,6 @@ if __name__ == "__main__":
         'BFM: ИТ::Экономика': 'https://www.bfm.ru/news.rss?tag=1399',
         'BFM: Право::Юристы': 'https://www.bfm.ru/news.rss?rubric=4889',
         'Клерк::Бухгалтерия': 'https://www.klerk.ru/export/news.rss',
-        'Финам: новости компаний::Экономика': 'https://www.finam.ru/analysis/conews/rsspoint/',
-        'Финам: новости мировых рынков::Экономика': 'https://www.finam.ru/international/advanced/rsspoint/',
         'ЦБ: новости::Юристы': 'http://www.cbr.ru/rss/eventrss',
         'ЦБ: пресс-релизы::Юристы': 'http://www.cbr.ru/rss/RssPress',
         'Минфин::Экономика': 'https://minfin.gov.ru/rss_news',
@@ -68,7 +66,6 @@ if __name__ == "__main__":
         'Гарант::Бухгалтерия': 'http://www.garant.ru/rss/',
         'Минтруд::Бухгалтерия': 'https://mintrud.gov.ru/news/rss/official',
         'Право.ру::Юристы': 'https://pravo.ru/rss/',
-        'Правительство::Бухгалтерия': 'http://government.ru/all/rss/',
     }
 
     records = get_rss_news(my_feed)
