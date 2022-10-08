@@ -79,7 +79,10 @@ def ceo_uk_news(m, res=False):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton("👈 Вернуться в меню")
     markup.add(item1)
-    bot.send_message(m.chat.id, '🤯🫠😶‍🌫️',  reply_markup=markup)
+    news_records = get_news_records_by_label('Юристы')
+    for news in news_records:
+        msg = news['headline'] + '\n\n*Подробнее*: ' + news['link']
+        bot.send_message(m.chat.id, msg, reply_markup=markup, parse_mode='Markdown')
 
 
 if __name__ == "__main__":
