@@ -4,7 +4,7 @@ from nltk.stem import WordNetLemmatizer
 from transformers import AutoTokenizer, AutoModel
 from transformers import PreTrainedTokenizerFast
 
-from vtb_hack.preprocessors import clean_text, text_to_vec
+from vtb_hack.src.preprocessors import clean_text, text_to_vec
 
 if __name__ == "__main__":
     # nltk.download('stopwords')

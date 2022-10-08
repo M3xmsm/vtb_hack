@@ -1,6 +1,6 @@
 from clickhouse_driver import Client
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 import vtb_hack
 
 package_dir = Path(vtb_hack.__file__).parent.parent.absolute()
@@ -44,6 +44,10 @@ class ClickHouse:
         ]
         return data_prepared
 
-    def execute(self, query: str, **kwargs):
+    def execute(self, query: str, **kwargs) -> List[Tuple[Any, ...]]:
         data = self.db_client.execute(query, **kwargs)
         return data
+
+    def insert(self, table_name: str, values: List[Dict[str, Any]]):
+        res = self.db_client.execute(f"INSERT INTO {table_name} VALUES", values)
+        return res
