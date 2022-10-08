@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "vtb_hack"
+version = "0.1.0"
+description = ""
+authors = ["ksetherg <ksetherg@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+jupyter = "^1.0.0"
+Telethon = "^1.25.2"
+PySocks = "^1.7.1"
+clickhouse-driver = "^0.2.4"
+structlog = "^22.1.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
