@@ -8,6 +8,7 @@
     
 - **Links:**
     - DB API: [http://51.250.101.92:8000/docs](http://51.250.101.92:8000/docs)
+    - Tg bot: [https://t.me/DB_NewsBot](https://t.me/DB_NewsBot)
     - Drive: [https://disk.yandex.ru/d/uLmfsRbl1qbFug](https://disk.yandex.ru/d/uLmfsRbl1qbFug)
 
 # Постановка задач
