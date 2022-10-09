@@ -3,7 +3,7 @@ from telebot import types
 from vtb_hack.backend.backbone import get_news_records_by_label
 
 
-bot = telebot.TeleBot('5779900311:AAHqsPweK0Mzu_Ck-3iMrKpx3vnFHRHUPBI')
+bot = telebot.TeleBot('test')
 
 
 @bot.message_handler(commands=["start"])
