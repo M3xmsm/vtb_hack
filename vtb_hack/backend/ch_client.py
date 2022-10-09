@@ -10,8 +10,6 @@ CLUSTERS: dict = {
     'prod_cluster': {
         'host': 'rc1a-b425jm4ulkoxruwo.mdb.yandexcloud.net',
         'port': 9440,
-        'user': 'admin',
-        'password': 'q1w2e3r4',
         'ca_certs': package_dir / 'YandexCA.pem',
         'secure': True
     }
